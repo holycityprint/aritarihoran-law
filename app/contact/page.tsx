@@ -123,7 +123,7 @@ export default function ContactPage() {
          FLOATING WHATSAPP BUTTON (versi elegan premium)
       ========================================================= */}
       <Link
-        href="https://wa.me/628197066620?text=Halo%20Law%20Office%20of%20Ari%20Tarihoran%20%26%20Andy%20Laxana,%20saya%20ingin%20konsultasi%20hukum."
+        href="https://wa.me/6282122122161?text=Halo%20Law%20Office%20of%20Ari%20Tarihoran%20%26%20Andy%20Laxana,%20saya%20ingin%20konsultasi%20hukum."
         target="_blank"
         className="fixed bottom-6 right-6 flex items-center gap-3 px-5 py-3 rounded-full 
                    bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-semibold 
