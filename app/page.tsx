@@ -55,18 +55,19 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* ===== Title ===== */}
+        {/* ===== Title (versi dibenahi agar pas di semua tampilan) ===== */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
-          className="font-montserrat text-5xl sm:text-6xl font-extrabold tracking-wide leading-tight uppercase 
+          className="font-montserrat font-extrabold tracking-wide leading-tight uppercase 
                      bg-gradient-to-r from-goldLight via-goldDeep to-goldLight bg-clip-text text-transparent 
-                     drop-shadow-[0_0_20px_rgba(245,218,140,0.5)] relative"
+                     drop-shadow-[0_0_20px_rgba(245,218,140,0.5)] relative
+                     text-4xl sm:text-5xl md:text-6xl space-y-1"
         >
-          LAW OFFICE OF
-          <br />
-          ARI TARIHORAN & ANDY LAXANA
+          <span className="block">Law Office of</span>
+          <span className="block">Ari Tarihoran &</span>
+          <span className="block">Andy Laxana</span>
         </motion.h1>
 
         {/* ===== Subtext ===== */}
@@ -161,8 +162,8 @@ export default function Home() {
             "Hukum Perburuhan",
             "Hukum Perikatan",
             "Hukum Hak Milik Intelektual",
-            "Hukum Kepailitan",      // 🆕 ditambahkan
-            "Hukum Arbitrase",       // 🆕 ditambahkan
+            "Hukum Kepailitan",      
+            "Hukum Arbitrase",       
             "Hukum Pertambangan",
             "Hukum Keluarga",
             "Hukum Kewarganegaraan dan Keimigrasian",
@@ -180,12 +181,7 @@ export default function Home() {
               viewport={{ once: true }}
               className={`bg-darkbg border border-gray-700 rounded-lg p-8 w-64 text-sm sm:text-base 
                           hover:border-goldLight hover:shadow-[0_0_20px_rgba(245,218,140,0.5)] 
-                          transition duration-300 ${
-                            area.startsWith("Hukum Hak Milik Intelektual") ||
-                            area.startsWith("Hukum Keluarga")
-                              ? "text-center"
-                              : ""
-                          }`}
+                          transition duration-300`}
             >
               {area}
             </motion.div>
