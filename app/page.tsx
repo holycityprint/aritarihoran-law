@@ -1,65 +1,204 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-darkbg flex flex-col items-center text-softwhite overflow-hidden pt-24">
+      {/* =========================================================
+         HERO SECTION — sisi kiri & kanan samar, warna natural
+      ========================================================= */}
+      <section className="relative flex flex-col justify-center items-center text-center px-6 py-32 bg-gradient-to-b from-[#0f0f0f] to-dark2 overflow-hidden">
+
+        {/* ===== Background kiri & kanan ===== */}
+        <div
+          className="absolute top-0 left-0 h-full w-1/3 bg-cover bg-center bg-no-repeat opacity-40"
+          style={{
+            backgroundImage: "url('/bg-lawoffice.jpg')",
+            backgroundPosition: "left center",
+            filter: "saturate(100%) brightness(0.8) contrast(1)",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div
+          className="absolute top-0 right-0 h-full w-1/3 bg-cover bg-center bg-no-repeat opacity-40"
+          style={{
+            backgroundImage: "url('/bg-lawoffice.jpg')",
+            backgroundPosition: "right center",
+            filter: "saturate(100%) brightness(0.8) contrast(1)",
+          }}
+        />
+
+        {/* Overlay lembut agar menyatu tapi tidak gelap */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/30 via-dark2/50 to-dark2/70" />
+
+        {/* ===== Logo ===== */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative flex justify-center items-center mb-8"
+        >
+          {/* Aura bercahaya di belakang logo */}
+          <div className="absolute inset-0 blur-xl bg-gradient-to-r 
+                          from-goldLight/40 via-goldDeep/70 to-goldLight/40 
+                          rounded-full opacity-70 animate-pulse" />
+
+          <Image
+            src="/logo.png"
+            alt="Law Office of Ari Tarihoran & Andy Laxana Logo"
+            width={110}
+            height={110}
+            priority
+            className="relative z-10 drop-shadow-[0_0_25px_rgba(245,218,140,0.7)]"
+          />
+        </motion.div>
+
+        {/* ===== Title ===== */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+          className="font-montserrat text-5xl sm:text-6xl font-extrabold tracking-wide leading-tight uppercase 
+                     bg-gradient-to-r from-goldLight via-goldDeep to-goldLight bg-clip-text text-transparent 
+                     drop-shadow-[0_0_20px_rgba(245,218,140,0.5)] relative"
+        >
+          LAW OFFICE OF
+          <br />
+          ARI TARIHORAN & ANDY LAXANA
+        </motion.h1>
+
+        {/* ===== Subtext ===== */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="relative mt-6 text-xl sm:text-2xl text-center"
+        >
+          <span className="font-script text-goldLight text-4xl align-middle 
+                           drop-shadow-[0_0_8px_rgba(245,218,140,0.5)]">
+            is your
+          </span>{" "}
+          <span className="font-montserrat font-semibold bg-gradient-to-r from-goldLight to-goldDeep 
+                           bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(245,218,140,0.5)]">
+            Work Trust
+          </span>
+        </motion.p>
+
+        {/* ===== Description ===== */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.6, duration: 1 }}
+          className="relative mt-6 max-w-2xl text-gray-400 text-sm sm:text-base leading-relaxed"
+        >
+          We place at the centre of international networks to advance your strategic interests 
+          with precision and integrity.
+        </motion.p>
+
+        {/* ===== Button ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="relative mt-10"
+        >
+          <Link
+            href="/profile"
+            className="btn-gold px-8 py-3 rounded-md shadow-md font-semibold text-sm sm:text-base"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Read Firm Profile
+          </Link>
+        </motion.div>
+
+        {/* ===== Garis Emas ===== */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ delay: 2.3, duration: 0.8, ease: "easeInOut" }}
+          className="relative mt-8 h-[2px] w-48 mx-auto bg-gradient-to-r 
+                     from-goldLight via-goldDeep to-goldLight 
+                     shadow-[0_0_15px_rgba(245,218,140,0.5)] rounded-full origin-center"
+        />
+
+        {/* ===== Shape Trapesium ===== */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-24 bg-dark2"
+          style={{
+            clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)",
+          }}
+        />
+      </section>
+
+      {/* =========================================================
+         PRACTICE AREAS — + Kepailitan & Arbitrase
+      ========================================================= */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        viewport={{ once: true }}
+        className="bg-dark2 text-softwhite py-20 w-full text-center"
+      >
+        <h2
+          className="font-montserrat text-3xl font-semibold mb-12 tracking-wide 
+                     bg-gradient-to-r from-goldLight to-goldDeep bg-clip-text text-transparent 
+                     drop-shadow-[0_0_8px_rgba(245,218,140,0.4)]"
+        >
+          Practice Areas
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-8 px-4">
+          {[
+            "Hukum Perdata",
+            "Hukum Pidana (Umum ataupun Khusus)",
+            "Hukum Tata Usaha Negara / Konstitusi",
+            "Hukum Pertanahan",
+            "Hukum Perseroan Terbatas",
+            "Hukum Perkawinan",
+            "Hukum Perbankan",
+            "Hukum Perburuhan",
+            "Hukum Perikatan",
+            "Hukum Hak Milik Intelektual",
+            "Hukum Kepailitan",      // 🆕 ditambahkan
+            "Hukum Arbitrase",       // 🆕 ditambahkan
+            "Hukum Pertambangan",
+            "Hukum Keluarga",
+            "Hukum Kewarganegaraan dan Keimigrasian",
+            "Hukum Perpajakan",
+            "Hukum Perlindungan Konsumen",
+            "Hukum Yayasan",
+            "Hukum Ketenagakerjaan",
+            "Jasa Kenotariatan",
+          ].map((area, index) => (
+            <motion.div
+              key={area}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08, duration: 0.6 }}
+              viewport={{ once: true }}
+              className={`bg-darkbg border border-gray-700 rounded-lg p-8 w-64 text-sm sm:text-base 
+                          hover:border-goldLight hover:shadow-[0_0_20px_rgba(245,218,140,0.5)] 
+                          transition duration-300 ${
+                            area.startsWith("Hukum Hak Milik Intelektual") ||
+                            area.startsWith("Hukum Keluarga")
+                              ? "text-center"
+                              : ""
+                          }`}
+            >
+              {area}
+            </motion.div>
+          ))}
         </div>
-      </main>
-    </div>
+      </motion.section>
+
+      {/* =========================================================
+         FOOTER
+      ========================================================= */}
+      <footer className="py-10 bg-black w-full text-center text-gray-500 text-sm border-t border-gray-800">
+        © 2025 Law Office of Ari Tarihoran & Andy Laxana. All rights reserved.
+      </footer>
+    </main>
   );
 }
