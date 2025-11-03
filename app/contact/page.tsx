@@ -84,7 +84,7 @@ export default function ContactPage() {
             <h2 className="text-goldLight font-semibold text-xl mb-2">
               Call for Help:
             </h2>
-            <p>Phone : 0819 7666 20</p>
+            <p>Phone : +62 821‑2212‑2161</p>
           </div>
 
           <div>

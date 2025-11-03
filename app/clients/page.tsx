@@ -104,7 +104,7 @@ export default function ClientsPage() {
               Gedung MD PLAZA Lt. 3 Blok B‑336‑337, Jl. Dalem Kaum No. 48‑52, Bandung, Jawa Barat.
               <br />
               <span className="block mt-2">
-                Phone : 0819 7666 20  |  Email : law@lawofficeofaritarihoran.com
+                Phone : +62 821‑2212‑2161  |  Email : law@lawofficeofaritarihoran.com
               </span>
               <span className="block">
                 Instagram : lawofficeofaritarihoran  |  Website : www.aritarihoran‑lawoffice.com
